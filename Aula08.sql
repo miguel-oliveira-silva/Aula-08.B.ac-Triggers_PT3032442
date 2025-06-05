@@ -9,6 +9,5 @@ BEGIN
         INNER JOIN inserted ON summary.ID = inserted.ID AND summary.year = inserted.year WHERE summary.total > 2)
     BEGIN
         ROLLBACK TRANSACTION;
-        RAISERROR('Instrutor não pode ter mais de 2 aulas no mesmo ano.', 16, 1);
     END
 END;
